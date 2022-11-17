@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+    /* background-color: hsl(235, 21%, 11%); */
+    background-color: hsl(236, 33%, 92%);
+    color: #fff;
+}
+
+#image {
+    width: 100%;
+    height: 40vh;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -12rem;
+    padding-bottom: 3rem;
+}
+
+.header {
+    width: 45%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 2.5rem;
+    font-family: 'Josefin Sans';
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.input {
+    width: 45%;
+    display: flex;
+    flex-direction: row;
+    background-color: hsl(0, 0%, 98%);
+    border-radius: .5rem;
+    margin-bottom: 1.5rem;
+}
+
+.input > input {
+    border: none;
+    width: 100%;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-radius: .5rem;
+    color: hsl(235, 19%, 35%);
+    font-size: 1rem;
+    background-color: hsl(0, 0%, 98%);
+}
+.input > input:focus-visible { 
+    border: none;
+    outline: none;
+}
+
+.input > input::placeholder {
+    font-size: 1rem;
+}
+
+.todo-circle {
+    display: flex;
+    align-self: center;
+    border-radius: 100%;
+    height: 21px;
+    width: 22px;
+    border: 1px solid hsl(233, 11%, 84%);
+    margin-right: 1rem;
+    margin-left: 1rem;
+    transition: .5s;
+}
+
+#dft-li {
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+}
+#dft-li > span {
+    color: hsl(235, 19%, 35%);
+}
+
+#checked {
+    background: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+}
+#li-checked > span {
+    opacity: .4;
+    text-decoration: line-through;
+}
+
+#check-icon-active {
+
+    align-self: center;
+    width: 12px;
+    height: 12px;
+    padding-left: 5px;
+}
+
+#check-icon {
+    display: none;
+    align-self: center;
+    width: 12px;
+    height: 12px;
+    padding-left: 5px;
+}
+
+
+.list {
+    width: 45%;
+    background-color: hsl(0, 0%, 98%);
+    /* padding: .5rem; */
+    border-radius: .5rem;
+}
+
+.list ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    align-items: center;
+    border-radius: .5rem;
+}
+
+
+.list ul > li:not(#filter) {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 1.5rem;
+    color: hsl(235, 19%, 35%);
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid hsl(233, 11%, 84%);
+}
+
+
+#filter {
+    border-radius: .5rem;
+    font-size: .9rem;
+    opacity: .7;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    color: hsl(235, 19%, 35%);
+}
+
+#filter > div:not(#counter) {
+    cursor: pointer;
+    transition: .5s;
+}
+
+#actions > span {
+   margin-left: .7rem; 
+}
+
+#actions > span:hover {
+    color: hsl(220, 98%, 61%);
+    transition: .3s;
+}
+
+#action-selected {
+    color: hsl(220, 98%, 61%);
+    opacity: 1 !important;
+}
+
+.cross-icon {
+    position: absolute;
+    right: 31.5%;
+    opacity: 0;
+}
+
+
+.list ul > li:not(#filter, #dft-li):hover .cross-icon{
+    cursor: pointer;
+    opacity: 1;
+    transition: .5s;
+}
+
+.list ul > li:not(#filter, #dft-li):hover .todo-circle {
+    cursor: pointer;
+    border: 1px solid hsl(280, 87%, 65%);
+}
+
+#change-theme {
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 1020px) {
+    .list {
+        width: 50%;
+    }
+    .input {
+        width: 50%;
+    }
+    .header {
+        width: 50%;
+    }
+    .cross-icon {
+        position: absolute;
+        right: 26.5%;
+        opacity: 0;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    .list {
+        width: 65%;
+    }
+    .input {
+        width: 65%;
+    } 
+    .header {
+        width: 65%;
+    }
+    .cross-icon {
+        position: absolute;
+        right: 20%;
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .list {
+        width: 80%;
+        font-size: .9rem;
+    }
+    .input {
+        width: 80%;
+    } 
+    .header {
+        width: 80%;
+    }  
+    #filter {
+        font-size: .8rem;
+    } 
+    .cross-icon {
+        position: absolute;
+        right: 12%;
+        opacity: 0;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    .list {
+        width: 80%;
+        font-size: .8rem;
+    }
+    .input {
+        width: 80%;
+    } 
+    .header {
+        width: 80%;
+        padding-top: 2rem;
+    }  
+    #filter {
+        font-size: .65rem;
+    } 
+    .cross-icon {
+        position: absolute;
+        right: 12%;
+        opacity: 0;
+    } 
+    
+    #dft-li > span {
+        font-size: .8rem;
+    }
+}
